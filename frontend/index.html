@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agentic AI News Verifier & Summarizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Agentic AI News Verifier & Summarizer</h1>
+    <p class="subtitle">Get only trusted, summarized news – and verify any article.</p>
+  </header>
+
+  <section class="user-bar">
+    <div class="user-bar-row">
+      <label for="userId">User ID (for history):</label>
+      <input type="number" id="userId" value="1" min="1" />
+    </div>
+
+    <div class="user-bar-row">
+      <button id="createUserBtn" class="primary-btn">Use New ID</button>
+      <button id="loadHistoryBtn" class="secondary-btn">Load History</button>
+      <span id="userBarStatus" class="status-text"></span>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-target="view-search">Search Trusted News</button>
+    <button class="tab-btn" data-target="view-check">Verify Your News</button>
+    <button class="tab-btn" data-target="view-history">History</button>
+  </nav>
+
+  <main class="views-container">
+    <!-- View 1: Search trusted news -->
+    <section id="view-search" class="view active">
+      <h2>Search Trusted News</h2>
+      <p class="view-desc">
+        Enter a topic. The system fetches news, checks realism, and returns a verified summary.
+      </p>
+
+      <div class="card">
+        <label for="topicInput" class="field-label">Topic / Question</label>
+        <input
+          type="text"
+          id="topicInput"
+          placeholder="e.g. RBI interest rates, AI regulation in India"
+          required
+        />
+        <button id="searchBtn" class="primary-btn">Get Trusted News</button>
+        <p id="searchStatus" class="status-text"></p>
+      </div>
+
+      <section id="searchResult" class="result-section hidden">
+        <h3>Summary</h3>
+        <p id="summaryText"></p>
+
+        <h3>Trusted Articles</h3>
+        <div id="articlesList" class="cards-list"></div>
+      </section>
+    </section>
+
+    <!-- View 2: Verify user-provided news -->
+    <section id="view-check" class="view">
+      <h2>Verify Your News</h2>
+      <p class="view-desc">
+        Paste a news headline, article text, or URL. The system will check if it's real, fake, or uncertain.
+      </p>
+
+      <div class="card">
+        <label for="userNewsTitle" class="field-label">Enter Headline</label>
+        <input
+          type="text"
+          id="userNewsTitle"
+          placeholder="e.g. Govt to ban UPI from tomorrow"
+          required
+        />
+
+        <label for="userNewsUrl" class="field-label">Paste URL</label>
+        <input
+          type="url"
+          id="userNewsUrl"
+          placeholder="https://example.com/news/upi-ban"
+          required
+        />
+
+        <label for="userNewsText" class="field-label">News Text (article / post)</label>
+        <textarea
+          id="userNewsText"
+          rows="6"
+          placeholder="Paste the news text here..."
+          required
+        ></textarea>
+
+        <button id="checkNewsBtn" class="primary-btn">Check Real or Fake</button>
+        <p id="checkStatus" class="status-text"></p>
+      </div>
+
+      <section id="checkResult" class="result-section hidden">
+        <h3>Verdict</h3>
+        <p><strong>Label:</strong> <span id="verdictLabel"></span></p>
+        <p><strong>Confidence:</strong> <span id="verdictConfidence"></span></p>
+
+        <h3>Reasons</h3>
+        <ul id="verdictReasons"></ul>
+
+        <h3>Summary of This News</h3>
+        <p id="checkSummaryText"></p>
+      </section>
+    </section>
+
+    <!-- View 3: History -->
+    <section id="view-history" class="view">
+      <h2>Your Verification History</h2>
+      <p class="view-desc">
+        Previous topics and news checks stored in long-term memory for this User ID.
+      </p>
+
+      <section id="historyResult" class="result-section">
+        <div id="historyList" class="cards-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>Agentic AI demo • Fake/real decisions are probabilistic, not absolute.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
