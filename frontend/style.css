@@ -1,0 +1,291 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f5fb;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* Layout */
+
+.app-header {
+  padding: 1.5rem 2rem 1rem;
+  background: #111827;
+  color: #f9fafb;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.app-header .subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.user-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.user-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-bar input#userId {
+  width: 400px;
+
+}
+
+/* Tabs */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid #d1d5db;
+  background: #f9fafb;
+}
+
+.tab-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Main views */
+
+.views-container {
+  padding: 1.5rem 2rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.view h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.view-desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Cards & sections */
+
+.card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.secondary-btn:hover {
+  background: #e5e7eb;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Results */
+
+.result-section {
+  margin-top: 1rem;
+}
+
+.result-section.hidden {
+  display: none;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.badge-real {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-fake {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-uncertain {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.result-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.result-card p {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.result-card a {
+  font-size: 0.8rem;
+  color: #2563eb;
+}
+
+/* History cards */
+
+.history-meta {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+/* Footer */
+
+.app-footer {
+  padding: 0.6rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .user-bar {
+    padding: 0.75rem 1rem;
+  }
+
+  .tabs {
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+  }
+
+  .views-container {
+    padding: 1rem 1rem 2.5rem;
+  }
+}
+
+.result-card button {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+
+.result-card a, 
+.historyList a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: block;
+  white-space: normal;
+  max-width: 100%;
+}
