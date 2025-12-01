@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+httpx
+pymysql
+cryptography
+python-dotenv
+google-generativeai
