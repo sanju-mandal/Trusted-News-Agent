@@ -13,7 +13,7 @@ Misinformation spreads faster than facts. People often struggle to identify whet
 
 This project solves that challenge by building an **Agentic AI system** that automatically verifies news credibility, summarizes content, checks external evidence using tools, and stores user-specific news history through memory.
 
-This project is created as part of the **5-Day AI Agents Intensive Course with Kaggle and Google for Capstone Project Hackathon** which solves  the Agents for Good track problem because it tackles fake news and misinformation, protects users from misleading content, supports informed decision-making, promotes safety and digital literacy, and delivers clear social benefit through trustworthy, accessible news verification , also helpful for educated peoples, applying the concepts taught across all five units: multi-agent systems, tools & MCP, sessions & memory, observability, A2A protocol, and prototype-to-production patterns.
+This project is created as part of the **5-Day AI Agents Intensive Course with Kaggle and Google for Capstone Project Hackathon**,  applying the concepts taught across all five units: multi-agent systems, tools & MCP, sessions & memory, observability, A2A protocol, and prototype-to-production patterns.
 
 ---
 
@@ -75,7 +75,7 @@ The system includes a **FastAPI backend**, a **MySQL database**, and a **modern 
 
 ---
 
-# 🛠️ **5. Workflow (Added as Requested)**
+## 🛠️ **5. Workflow**
 
 Below is the **complete end-to-end workflow** of the *Agentic AI News Verifier & Summarizer*:
 
@@ -105,7 +105,7 @@ Below is the **complete end-to-end workflow** of the *Agentic AI News Verifier &
 * Searches the web for supporting or contradicting evidence
 * Extracts findings
 * Sends results back to Verification Agent
-  *(May use long-running operation if external search takes time, but it always take 3-4 seconds only - FAST)*
+  *(May use long-running operation if external search takes time or your Internet speed is slow, but it generally always take 3-4 seconds only - FAST)*
 
 ### **Step 6: Realism Checker Agent Updates Final Score**
 
@@ -223,6 +223,46 @@ For agent-to-agent messaging between evidence agent ↔ verification agent.
 git clone https://github.com/your-Github-username/Trusted-News-Agent.git
 cd Trusted-News-Agent
 ```
+
+### **Create the MySQL Database**
+
+Before starting the backend, you must create the database that stores all verified news, summaries, and user memory.
+
+#### **Steps to create the database:**
+
+1. **Open Command Prompt**
+
+   * Press **Windows + S**
+   * Type **cmd**
+   * Open **Command Prompt**
+
+2. **Log in to MySQL**
+
+```bash
+mysql -u root -p
+```
+
+After running this command, MySQL will ask for your **root password**.
+Type your password and press **Enter**.
+
+3. **Create the database**
+
+```sql
+CREATE DATABASE news_memory;
+```
+
+This command will create a new database named **news_memory**, which will be used by the backend to store news data, user history, and summaries.
+
+4. **Verify the database was created**
+
+```sql
+SHOW DATABASES;
+```
+
+![See DATABASE, news_memory created:](./assets/git-database.png)
+
+You should now see **news_memory** listed.
+If it appears, your database is successfully created.
 
 ### **Backend Setup**
 
